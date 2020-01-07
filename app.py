@@ -12,6 +12,7 @@ def index():
 
 @app.route('/API/data')
 def get_data():
+    cnx = sqlite3.connect('Project2')
     w2 = pd.read_sql_query("SELECT * FROM hawaii" , cnx)
     res = w2.to_json(orient='table')
     return jsonify(res)
