@@ -2,8 +2,10 @@
 import sqlite3
 import pandas as pd
 from flask import Flask, request, jsonify
-app = Flask(__name__)
+from flask_cors import CORS
 
+app = Flask(__name__)
+CORS(app)
 
 # A welcome message to test our server
 @app.route('/')
